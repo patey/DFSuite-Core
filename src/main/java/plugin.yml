@@ -1,0 +1,112 @@
+name: DFCore
+main: com.ntcreations.DwarfFortress.DwarfFortress
+version: 0.1.1
+    
+commands:
+   DF:
+    description: Version check and plugin reload
+    usage: "usage: /<command>"
+    permission: DwarfFortress.DF
+    permission-message: You don't have <permission>
+   forum:
+    description: forum registration
+    usage: "usage: /<command> {register} {pass} {confirmpass} {email}"
+    permission: DwarfFortress.forum
+    permission-message: You don't have <permission>
+   Race:
+    description: Race selection.
+    permission: DwarfFortress.race
+    permission-message: You don't have <permission>
+   global:
+    description: Global chat toggle.
+    usage: "usage: /<command> [on/off]"
+    permission: DwarfFortress.global
+    permission-message: You don't have <permission>
+   newrace:
+    description: Change a users race.
+    usage: "usage: /<command> [player] [race]"
+    permission: DwarfFortress.newrace
+    permission-message: You don't have <permission>
+   channel:
+    description: Change your chat channel.
+    usage: "usage: /<command> [channel]"
+    permission: DwarfFortress.channel
+    permission-message: You don't have <permission>
+   g:
+    description: Talk to everyone clearly.
+    usage: "usage: /<command> [message]"
+    permission: DwarfFortress.chat.global
+    permission-message: You don't have <permission>
+   y:
+    description: Yell to other players.
+    usage: "usage: /<command> [player] [race]"
+    permission: DwarfFortress.chat.yell
+    permission-message: You don't have <permission>
+   w:
+    description: Whisper to other players.
+    usage: "usage: /<command> [message]"
+    permission: DwarfFortress.chat.whisper
+    permission-message: You don't have <permission>
+   me:
+    description: emotes.
+    usage: "usage: /<command> [emote]"
+    permission: DwarfFortress.chat.emote
+    permission-message: You don't have <permission>
+   emotes:
+    description: edit emotions list.
+    usage: "usage: /<command> [add/remove] [emote]"
+    permission: DwarfFortress.chat.emotions.edit
+    permission-message: You don't have <permission>
+   eop:
+    description: add to an emotions outputs.
+    usage: "usage: /<command> [+] [output]"
+    permission: DwarfFortress.chat.emotions.outputs
+    permission-message: You don't have <permission>
+      
+permissions:
+    DwarfFortress.*:
+        description: Gives access to all commands
+        children:
+            DwarfFortress.DF: true
+            DwarfFortress.forum: true
+            DwarfFortress.global: true
+            DwarfFortress.newrace: true
+            DwarfFortress.chat.channel: true
+            DwarfFortress.chat.global: true
+            DwarfFortress.chat.yell: true
+            DwarfFortress.chat.whisper: true
+            DwarfFortress.chat.emotions.edit: true
+            DwarfFortress.chat.emotions.outputs: true
+    DwarfFortress.DF:
+        description: Version check/reload plugin
+    DwarfFortress.forum:
+        description: forum registration
+        default: true
+    DwarfFortress.race:
+        description: Race selection
+        default: true
+    DwarfFortress.global:
+        description: Global chat toggle
+    DwarfFortress.newrace:
+        description: change user's race
+    DwarfFortress.chat.channel:
+        description: change your channel
+        default: true
+    DwarfFortress.chat.global:
+        description: Talk to everyone clearly
+        default: true
+    DwarfFortress.chat.yell:
+        description: Yell to other players
+        default: true
+    DwarfFortress.chat.whisper:
+        description: Whisper to other players
+        default: true
+    DwarfFortress.chat.me:
+        description: emotes
+        default: true
+    DwarfFortress.chat.emotions.edit:
+        description: edit emotions list
+        default: true
+    DwarfFortress.chat.emotions.outputs:
+        description: add to an emotions outputs
+        default: true
